@@ -2,6 +2,7 @@ import { Configuration, CreateImageRequestSizeEnum, OpenAIApi } from "openai";
 import { Menu } from "@grammyjs/menu";
 import { Bot, Context, session } from "grammy";
 import { env } from 'node:process';
+import express from "express";
 
 const bot = new Bot(env.BOTKEY)
 
@@ -143,3 +144,7 @@ bot.on("message", (ctx) => {
 
 // Start the bot.
 bot.start();
+
+app.listen(8080, () => {
+  console.log(`Bot is listening on port 8080`)
+});
