@@ -109,7 +109,7 @@ bot.command("set_temp", (ctx) => {
   if (t < 0 || t > 1) {
     ctx.reply("Invalid argument give, please enter a number between 0 and 1 (inclusive)");
   } else {
-    ctx.session.model = Number(t);
+    ctx.session.temp = Number(t);
     ctx.reply(`🌡️ Temperature set to: ${t}`);
   }
 });
