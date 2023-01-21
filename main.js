@@ -1,8 +1,9 @@
 import { Configuration, CreateImageRequestSizeEnum, OpenAIApi } from "openai";
 import { Menu } from "@grammyjs/menu";
 import { Bot, Context, session } from "grammy";
+import { env } from 'node:process';
 
-const bot = new Bot(BOTKEY)
+const bot = new Bot(env.BOTKEY)
 
 
 //returns the session key
@@ -115,7 +116,7 @@ bot.command("set_temp", (ctx) => {
 
 //call openAI
 const configuration = new Configuration({
-  apiKey: AIKEY,
+  apiKey: env.AIKEY,
 });
 const openai = new OpenAIApi(configuration);
 
