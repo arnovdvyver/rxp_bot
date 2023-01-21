@@ -1,10 +1,8 @@
 import { Configuration, CreateImageRequestSizeEnum, OpenAIApi } from "openai";
 import { Menu } from "@grammyjs/menu";
 import { Bot, Context, session } from "grammy";
-import * as dotenv from 'dotenv'
-dotenv.config()
 
-const bot = new Bot(process.env.BOTKEY)
+const bot = new Bot(BOTKEY)
 
 
 //returns the session key
@@ -117,7 +115,7 @@ bot.command("set_temp", (ctx) => {
 
 //call openAI
 const configuration = new Configuration({
-  apiKey: process.env.AIKEY,
+  apiKey: AIKEY,
 });
 const openai = new OpenAIApi(configuration);
 
