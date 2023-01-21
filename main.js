@@ -6,6 +6,7 @@ import express from "express";
 
 const bot = new Bot(env.BOTKEY)
 
+const app = express();
 
 //returns the session key
 function getSessionKey(ctx) {
